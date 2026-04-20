@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>slopandmop — terms</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+        background: #0f1115;
+        color: #e6e6df;
+        line-height: 1.6;
+      }
+      .wrap { max-width: 720px; margin: 0 auto; padding: 32px 20px 80px; }
+      h1 { margin: 0 0 24px; font-size: 2rem; letter-spacing: -0.02em; }
+      h2 { margin-top: 32px; font-size: 1.1rem; }
+      a { color: #d7b56d; }
+      .muted { color: #9ba39a; font-size: 0.92rem; }
+      code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color: #d7b56d; }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <p class="muted"><a href="/">← slopandmop</a></p>
+      <h1>Terms</h1>
+
+      <h2>What this is</h2>
+      <p>An experiment. A click on the front page provisions a temporary Intel TDX virtual machine
+      on our GCP project and drops you into a chat with a <a href="https://github.com/anthropics/claude-code">Claude Code</a>
+      process running inside it. That chat can provision further VMs on the same project (for example,
+      to run <code>openclaw</code>). Everything is torn down on a timer.</p>
+
+      <h2>What's allowed</h2>
+      <p>Exploring the ollama + openclaw demo. Asking your sm to deploy other slop from the catalog.
+      Kicking the tires on confidential compute. One sm per source IP per day, soft cap.</p>
+
+      <h2>What's not</h2>
+      <p>Running anything illegal or abusive. Using the sm as a free general-purpose VM (it will be
+      reaped). Attempting to exfiltrate the sm's credentials or attack other tenants.</p>
+
+      <h2>Data</h2>
+      <p>The markdown workspace inside your sm is persistent for the sm's lifetime only. When
+      the watchdog tears it down, the workspace dies with it. The factory keeps a row with your
+      <code>sm_id</code>, source IP, and timestamps until the sm is reaped plus 30 days.</p>
+
+      <h2>No warranty</h2>
+      <p>Nothing here is a production service. The sm might crash, the model pull might fail,
+      the factory might return 500. Retry, and if it's still broken, file an issue.</p>
+
+      <p class="muted">Questions: <a href="https://github.com/slopandmop/slopandmop/issues">issues</a>.</p>
+    </div>
+  </body>
+</html>
